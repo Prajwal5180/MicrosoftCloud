@@ -9,9 +9,9 @@ import './App.css';
 
 const App = () => { 
   const displayName = 'Guest'
-  const [userId, setUserId] = useState<string>('');
-  const [token, setToken] = useState<string>('');
-  const [teamsMeetingLink, setTeamsMeetingLink] = useState<string>('');
+  const [userId, setUserId] = useState<string>('8:acs:1b93d1a3-ff30-4b9f-91f2-25694197de9a_00000026-b609-155d-655d-573a0d0084dc');
+  const [token, setToken] = useState<string>('eyJhbGciOiJSUzI1NiIsImtpZCI6IkY1M0ZEODA0RThBNDhBQzg4Qjg3NTA3M0M4MzRCRDdGNzBCMzBENDUiLCJ4NXQiOiI5VF9ZQk9pa2lzaUxoMUJ6eURTOWYzQ3pEVVUiLCJ0eXAiOiJKV1QifQ.eyJza3lwZWlkIjoiYWNzOjFiOTNkMWEzLWZmMzAtNGI5Zi05MWYyLTI1Njk0MTk3ZGU5YV8wMDAwMDAyNi1iNjA5LTE1NWQtNjU1ZC01NzNhMGQwMDg0ZGMiLCJzY3AiOjE3OTIsImNzaSI6IjE3NDQxMjg0MDUiLCJleHAiOjE3NDQyMTQ4MDUsInJnbiI6ImFtZXIiLCJhY3NTY29wZSI6InZvaXAiLCJyZXNvdXJjZUlkIjoiMWI5M2QxYTMtZmYzMC00YjlmLTkxZjItMjU2OTQxOTdkZTlhIiwicmVzb3VyY2VMb2NhdGlvbiI6InVuaXRlZHN0YXRlcyIsImlhdCI6MTc0NDEyODQwNX0.UqG5bcDCtvSFC3dD2vLv9Li6Sz12LSqo1Z1dU2yoRkm1BtOHXPQBSd-WVw3IFu8_xtDwxeGpRQGzDlQgTV__IWIza8y0GNETCb4IDf9wPuaxR8FFdBr4vo3EivLGfT_yEQQLnOwJh6QuxPn86IKZHzprWiZjId72q65gEDXvH8PzBLFvrW5VPqRrmsfSiS9gnJwNwnNsAfZn4nUwEyvisWZdOYYi3d25JSPqIfqPSFb9br1vTXNTZgxCcasJc-o-E9dMOrL9s-t2fTDWJDqUMJbawabQUj9-hqRL1Q34XUMtMZtDZm72tcB4v4leUB3i_ByMBg_Jt0bn63l6arwD3g');
+  const [teamsMeetingLink, setTeamsMeetingLink] = useState<string>('https://teams.microsoft.com/l/meetup-join/19%3ameeting_OGE0NjkwZWQtMWVjNS00YTZiLTg3NDYtNjVmYWFmMjJhNDM2%40thread.v2/0?context=%7b%22Tid%22%3a%22ed84fe55-74a8-471c-a22b-5457749fd6d5%22%2c%22Oid%22%3a%228c1e5d9f-6762-41c2-9a00-0ecdd45acbb1%22%7d');
   const [message, setMessage] = useState<string>('');
   const credential = useMemo(() => {
     if (token) {
@@ -35,6 +35,7 @@ const App = () => {
   const callAdapter = useAzureCommunicationCallAdapter(callAdapterArgs);
 
   useEffect(() => {
+    /* Commenting out for now
     const init = async () => {
       setMessage('Getting ACS user');
       //Call Azure Function to get the ACS user identity and token
@@ -52,6 +53,7 @@ const App = () => {
       console.log('Teams meeting link', link);
     }
     init();
+    */
   }, []);
 
   if (callAdapter) {
